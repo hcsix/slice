@@ -7,14 +7,41 @@ if ! command -v magick &> /dev/null; then
 fi
 
 # 手动输入参数
-read -p "请输入输入图片文件路径: " input_file
-read -p "请输入输出图片目录: " output_dir
-read -p "请输入每张小图的宽度: " width
-read -p "请输入每张小图的高度: " height
-read -p "请输入水平偏移初始值: " x_offset
-read -p "请输入垂直偏移初始值: " y_offset
-read -p "请输入水平方向上的小图数量: " num_cols
-read -p "请输入垂直方向上的小图数量: " num_rows
+read -p "请输入输入图片文件路径 (默认: 当前路径/input_image.png): " input_file
+read -p "请输入输出图片目录 (默认: 当前路径/output_images): " output_dir
+
+# 设置默认值
+input_file=${input_file:-"input_image.png"}
+output_dir=${output_dir:-"output_images"}
+
+# 校验函数
+validate_number() {
+    local value="$1"
+    local prompt="$2"
+    while ! [[ "$value" =~ ^[0-9]+$ ]]; do
+        read -p "$prompt" value
+    done
+    echo "$value"
+}
+
+# 读取并校验参数
+width=$(validate_number "" "请输入每张小图的宽度: ")
+height=$(validate_number "" "请输入每张小图的高度: ")
+x_offset=$(validate_number "" "请输入水平偏移初始值: ")
+y_offset=$(validate_number "" "请输入垂直偏移初始值: ")
+num_cols=$(validate_number "" "请输入水平方向上的小图数量: ")
+num_rows=$(validate_number "" "请输入垂直方向上的小图数量: ")
+
+# 打印输入的参数
+echo "输入的参数如下:"
+echo "输入图片文件路径: $input_file"
+echo "输出图片目录: $output_dir"
+echo "每张小图的宽度: $width"
+echo "每张小图的高度: $height"
+echo "水平偏移初始值: $x_offset"
+echo "垂直偏移初始值: $y_offset"
+echo "水平方向上的小图数量: $num_cols"
+echo "垂直方向上的小图数量: $num_rows"
 
 # 图片编号
 image_num=1
