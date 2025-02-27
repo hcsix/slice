@@ -1,2 +1,22 @@
-# slice
-A tool using Bash scripts to quickly slice images with Imagemagick. Simplifies the image cutting process for batch processing.
+Slice
+# 一、项目概述。
+ImageSlice 是一个利用 Bash 脚本结合 Imagemagick 实现快速切图的工具，旨在简化图片批量切割流程，提高工作效率。
+# 二、功能特点。
+- 快速切割：借助 Imagemagick 的强大功能，能高效地对图片进行切割操作。
+- 批量处理：支持一次性处理多张图片，节省时间和精力。
+# 三、安装与使用。
+（一）环境要求。
+- 系统需安装 Bash。
+- 安装 Imagemagick 库。
+（二）安装步骤。
+ - 克隆本项目到本地仓库。
+ - 确保环境满足上述要求。
+（三）使用方法。
+ - 打开终端，进入项目目录。
+ - 运行相关的 Bash 脚本，按照提示输入图片路径、切割参数等信息。
+# 四、贡献指南。
+欢迎大家参与项目改进！如果你有新功能想法或发现问题：
+ - 先在 Issues 里提交问题或建议。
+ - 若要提交代码更改，先 fork 本项目，在自己分支上修改后提交 Pull Request。
+# 五、许可证。
+本项目基于 Apache 2.0 许可证开源，使用过程中请遵循相关规定。同时，项目使用了 Imagemagick 库，其遵循 Apache 2.0 许可证，请留意相关版权信息。
