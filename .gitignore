@@ -2,3 +2,5 @@ src/.DS_Store
 .DS_Store
 src/test.pdf
 src/output_images/*
+src/trimmed_image.png
+src/output_000.png
